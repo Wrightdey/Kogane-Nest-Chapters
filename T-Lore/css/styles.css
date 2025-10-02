@@ -23,6 +23,32 @@ img {
     border: 3px solid black;
 }
 
+#top-nav {
+  background-color: #222;
+  padding: 10px 0;
+}
+
+#top-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+#top-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+#top-nav li a:hover {
+  color: #ffcc00;
+}
+
 /* Styles for screens smaller than 768px wide */
 @media only screen and (max-width: 767px) {
   body {
@@ -37,6 +63,10 @@ img {
   img {
     width: 100%;
     height: auto;
+  }
+  #top-nav ul {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
