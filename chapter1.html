@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="chapter" class="desktop">
+        <img class="img" src="images/c1-p1.jpg">
+        <img class="img" src="images/c1-p2.jpg">
+        <img class="img" src="images/c1-p3.jpg">
+        <img class="img" src="images/c1-p4.jpg">
+        <img class="img" src="images/c1-p5.jpg">
+        <img class="img" src="images/c1-p6.jpg">
+    </div>
+
+<div id="chapter-nav">
+    <button onclick="goToPrevious()">⟵ Previous</button>
+
+    <select id="chapterSelect" onchange="goToChapter()">
+        <option value="chapter1.html">Chapter 1</option>
+        <option value="chapter2.html">Chapter 2</option>
+        <option value="chapter3.html">Chapter 3</option>
+        <!-- Add more chapters as needed -->
+    </select>
+
+    <button onclick="goToNext()">Next ⟶</button>
+</div>
+    
+</body>
+</html>
