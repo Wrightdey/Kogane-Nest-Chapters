@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="chapter-nav">
+        <button onclick="goToPrevious()">⟵ Previous</button>
+
+        <select id="chapterSelectTop" onchange="goToChapter(this)">
+            <option value="chapter1.html">Chapter 1</option>
+            <option value="chapter2.html">Chapter 2</option>
+            <option value="chapter3.html">Chapter 3</option>
+            <option value="chapter4.html">Chapter 4</option>
+            <option value="chapter5.html">Chapter 5</option>
+            <option value="chapter6.html">Chapter 6</option>
+        </select>
+
+        <button onclick="goToNext()">Next ⟶</button>
+    </div>
+
+    <div id="chapter" class="desktop">
+        <img class="img" src="images/c2-p1.jpg">
+        <img class="img" src="images/c2-p2.jpg">
+        <img class="img" src="images/c2-p3.jpg">
+        <img class="img" src="images/c2-p4.jpg">
+        <img class="img" src="images/c2-p5.jpg">
+        <img class="img" src="images/c2-p6.jpg">
+    </div>
+
+    <script>
+        const chapters = [
+        "chapter1.html",
+        "chapter2.html",
+        "chapter3.html",
+        "chapter4.html",
+        "chapter5.html",
+        "chapter6.html"
+        ];
+
+        function goToChapter(selectElement) {
+            const selectedValue = selectElement.value;
+
+            // Sync both dropdowns
+            document.getElementById("chapterSelectTop").value = selectedValue;
+            document.getElementById("chapterSelectBottom").value = selectedValue;
+
+            // Navigate to selected chapter
+            window.location.href = selectedValue;
+        }
+
+        function getCurrentChapterIndex() {
+            const current = window.location.pathname.split("/").pop();
+            return chapters.indexOf(current);
+        }
+
+        function goToPrevious() {
+            const index = getCurrentChapterIndex();
+            if (index > 0) {
+                window.location.href = chapters[index - 1];
+            }
+        }
+
+        function goToNext() {
+            const index = getCurrentChapterIndex();
+            if (index < chapters.length - 1) {
+                window.location.href = chapters[index + 1];
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            window.onload = function () {
+                const current = window.location.pathname.split("/").pop();
+                document.getElementById("chapterSelectTop").value = current;
+                document.getElementById("chapterSelectBottom").value = current;
+            };
+        });
+    </script>
+
+    <div id="chapter-nav">
+        <button onclick="goToPrevious()">⟵ Previous</button>
+
+        <select id="chapterSelectBottom" onchange="goToChapter(this)">
+            <option value="chapter1.html">Chapter 1</option>
+            <option value="chapter2.html">Chapter 2</option>
+            <option value="chapter3.html">Chapter 3</option>
+            <option value="chapter4.html">Chapter 4</option>
+            <option value="chapter5.html">Chapter 5</option>
+            <option value="chapter6.html">Chapter 6</option>
+        </select>
+
+        <button onclick="goToNext()">Next ⟶</button>
+    </div>
+    
+</body>
+</html>
