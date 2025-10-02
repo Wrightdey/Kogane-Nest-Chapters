@@ -10,27 +10,33 @@
 
 #chapter {
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
 
 img {
-    max-width: 50%;
+    width: 40%;
     height: auto;
     display: block;
-    margin: 0 auto;
-    padding: 2px;
-    border-width: 5px;
-    border-color: black;
+    margin: 5px auto;
+    border: 3px solid black;
 }
 
 /* Styles for screens smaller than 768px wide */
 @media only screen and (max-width: 767px) {
   body {
-    background-color: rgb(238, 248, 164);
+    background-color: rgb(233, 239, 190);
   }
-  .container {
-    width: 90%;
+  #chapter {
+    width: 100%;
+    max-width: 767px;
+    padding: 10px;
+    transition: width 0.3s ease;;
+  }
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -39,8 +45,13 @@ img {
   body {
     background-color: rgb(233, 239, 190);
   }
-  .container {
-    width: 70%;
+  #chapter {
+    width: 40%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: auto;
+    padding: 20px;
+    transition: width 0.3s ease;
   }
 }
 
@@ -49,7 +60,7 @@ img {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 20px 0;
+  margin: 20px 0;
 }
 
 #chapter-nav button,
