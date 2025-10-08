@@ -1,0 +1,114 @@
+/* Reset default margins and fonts */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #1e1e2f, #3a3a5c);
+  color: #fff;
+  text-align: center;
+}
+
+/* Page title styling */
+h1 {
+  font-size: 3em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-shadow: 2px 2px #000;
+}
+
+/* Link list container */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Individual link items */
+li {
+  margin: 15px 0;
+}
+
+/* Link styling */
+/* a {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #444;
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+} */
+
+/* Hover effect */
+a:hover {
+  background-color: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+#banner {
+    background: linear-gradient(to right, #3a3a5c, #1e1e2f);
+    color: #ffcc00;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 4px solid #ffcc00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#banner h1 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px #000;
+    letter-spacing: 2px;
+}
+
+#link-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* Adjust for banner height */
+}
+
+#link-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 80%; /* This controls the overall width */
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+#link-section li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#link-section a {
+  display: block;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  font-size: 1.5em;
+  background-color: #444;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+#link-section a:hover {
+  background-color: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}

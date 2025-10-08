@@ -1,0 +1,128 @@
+#header {
+    text-align: center;
+}
+
+#top-nav {
+  background-color: #222;
+  padding: 10px 0;
+}
+
+#top-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+#top-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+#top-nav li a:hover {
+  color: #ffcc00;
+}
+
+/* Styles for screens smaller than 768px wide */
+@media only screen and (max-width: 767px) {
+  body {
+    background-color: rgb(191, 255, 218); /* 233, 239, 190 (original) */
+  }
+  #chapter {
+    width: 100%;
+    max-width: 767px;
+    padding: 10px;
+    transition: width 0.3s ease;;
+  }
+  #content {
+    padding: 0 60px;
+    font-size: 18px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  #top-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Styles for screens larger than or equal to 768px wide */
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: rgb(184, 255, 214);
+  }
+  #chapter {
+    width: 40%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: auto;
+    padding: 20px;
+    transition: width 0.3s ease;
+  }
+  #content {
+    padding: 0 150px;
+    font-size: 18px;
+  }
+}
+
+#chapter-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#chapter-nav button,
+#chapter-nav select {
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#story-container {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  background-color: #1e1e2f;
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  text-align: left;
+  position: relative;
+}
+
+#text-output {
+  font-size: 1.2em;
+  line-height: 1.6;
+  min-height: 200px;
+}
+
+#cursor {
+  display: inline-block;
+  font-weight: bold;
+  color: #ffcc00;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+#next-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
