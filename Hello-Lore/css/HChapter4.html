@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/HelloSheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Chapter 4</title>
+</head>
+<body>
+
+    <nav id ="top-nav">
+        <ul>
+            <li><a href="../index.html">Home Page</a></li>
+            <li><a href="../T-Lore/chapters/chapter1.html">KT Lore</a></li>
+            <li><a href="../Hello-Lore/Hello-Lore.html">Hello Lore</a></li>
+            <li><a href="../Obelac-Lore/Obelac-Lore.html">Obelac Lore</a></li>
+        </ul>
+    </nav>
+
+    <div id="chapter-nav">
+        <button onclick="goToPrevious()">⟵ Previous</button>
+
+        <select id="chapterSelectTop" onchange="goToChapter(this)">
+            <option value="Hello-Lore.html">Chapter 1</option>
+            <option value="HChapter2.html">Chapter 2</option>
+            <option value="HChapter3.html">Chapter 3</option>
+            <option value="HChapter4.html">Chapter 4</option>
+            <option value="HChapter5.html">Chapter 5</option>
+            <option value="HChapter6.html">Chapter 6</option>
+            <option value="HChapter7.html">Chapter 7</option>
+            <option value="HChapter8.html">Chapter 8</option>
+            <option value="HChapter9.html">Chapter 9</option>
+            <option value="HChapter10.html">Chapter 10</option>
+            <option value="HChapter11.html">Chapter 11</option>
+            <option value="HChapter12.html">Chapter 12</option>
+            <option value="HChapter13.html">Chapter 13</option>
+            <option value="HChapter14.html">Chapter 14</option>
+            <option value="HChapter15.html">Chapter 15</option>
+            <option value="HChapter16.html">Chapter 16</option>
+            <option value="HChapter17.html">Chapter 17</option>
+            <option value="HChapter18.html">Chapter 18</option>
+            <option value="HChapter19.html">Chapter 19</option>
+            <option value="HChapter20.html">Chapter 20</option>
+            <!-- add more chapters here-->
+        </select>
+
+        <button onclick="goToNext()">Next ⟶</button>
+    </div>
+
+    <!-- Add text here, using <h3> -->
+    <div id="content">
+        <h3>
+            
+        </h3>
+    </div>"
+
+    <script>
+        const chapters = [
+            "Hello-Lore.html",
+            "HChapter2.html",
+            "HChapter3.html",
+            "HChapter4.html",
+            "HChapter5.html",
+            "HChapter6.html",
+            "HChapter7.html",
+            "HChapter8.html",
+            "HChapter9.html",
+            "HChapter10.html",
+            "HChapter11.html",
+            "HChapter12.html",
+            "HChapter13.html",
+            "HChapter14.html",
+            "HChapter15.html",
+            "HChapter16.html",
+            "HChapter17.html",
+            "HChapter18.html",
+            "HChapter19.html",
+            "HChapter20.html"
+        ];
+
+        function goToChapter(selectElement) {
+            const selectedValue = selectElement.value;
+
+            // Sync both dropdowns
+            document.getElementById("chapterSelectTop").value = selectedValue;
+            document.getElementById("chapterSelectBottom").value = selectedValue;
+
+            // Navigate to selected chapter
+            window.location.href = selectedValue;
+        }
+
+        function getCurrentChapterIndex() {
+            const current = window.location.pathname.split("/").pop();
+            return chapters.indexOf(current);
+        }
+
+        function goToPrevious() {
+            const index = getCurrentChapterIndex();
+            if (index > 0) {
+                window.location.href = chapters[index - 1];
+            }
+        }
+
+        function goToNext() {
+            const index = getCurrentChapterIndex();
+            if (index < chapters.length - 1) {
+                window.location.href = chapters[index + 1];
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            window.onload = function () {
+                const current = window.location.pathname.split("/").pop();
+                document.getElementById("chapterSelectTop").value = current;
+                document.getElementById("chapterSelectBottom").value = current;
+            };
+        });
+    </script>
+
+    <div id="chapter-nav">
+        <button onclick="goToPrevious()">⟵ Previous</button>
+
+        <select id="chapterSelectBottom" onchange="goToChapter(this)">
+            <option value="Hello-Lore.html">Chapter 1</option>
+            <option value="HChapter2.html">Chapter 2</option>
+            <option value="HChapter3.html">Chapter 3</option>
+            <option value="HChapter4.html">Chapter 4</option>
+            <option value="HChapter5.html">Chapter 5</option>
+            <option value="HChapter6.html">Chapter 6</option>
+            <option value="HChapter7.html">Chapter 7</option>
+            <option value="HChapter8.html">Chapter 8</option>
+            <option value="HChapter9.html">Chapter 9</option>
+            <option value="HChapter10.html">Chapter 10</option>
+            <option value="HChapter11.html">Chapter 11</option>
+            <option value="HChapter12.html">Chapter 12</option>
+            <option value="HChapter13.html">Chapter 13</option>
+            <option value="HChapter14.html">Chapter 14</option>
+            <option value="HChapter15.html">Chapter 15</option>
+            <option value="HChapter16.html">Chapter 16</option>
+            <option value="HChapter17.html">Chapter 17</option>
+            <option value="HChapter18.html">Chapter 18</option>
+            <option value="HChapter19.html">Chapter 19</option>
+            <option value="HChapter20.html">Chapter 20</option>
+            <!-- add more chapters here-->
+        </select>
+
+        <button onclick="goToNext()">Next ⟶</button>
+    </div>
+
+<!--
+    <div id="story-container">
+    <div id="text-output"></div>
+    <div id="cursor">|</div>
+    <button id="next-btn">Next</button>
+    </div>
+-->
+</body>
+</html>

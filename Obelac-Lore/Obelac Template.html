@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/ObelacSheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obelac Chapter 20</title>
+</head>
+
+<body>
+
+    <nav id="top-nav">
+        <ul>
+            <li><a href="../index.html">Home Page</a></li>
+            <li><a href="../T-Lore/chapters/chapter1.html">KT Lore</a></li>
+            <li><a href="../Hello-Lore/Hello-Lore.html">Hello Lore</a></li>
+            <li><a href="../Obelac-Lore/Obelac-Lore.html">Obelac Lore</a></li>
+        </ul>
+    </nav>
+
+    <div id="chapter-nav">
+        <button onclick="goToPrevious()">⟵ Previous</button>
+
+        <select id="chapterSelectTop" onchange="goToChapter(this)">
+            <option value="Obelac-Lore.html">Chapter 1</option>
+            <option value="OChapter2.html">Chapter 2</option>
+            <option value="OChapter3.html">Chapter 3</option>
+            <option value="OChapter4.html">Chapter 4</option>
+            <option value="OChapter5.html">Chapter 5</option>
+            <option value="OChapter6.html">Chapter 6</option>
+            <option value="OChapter7.html">Chapter 7</option>
+            <option value="OChapter8.html">Chapter 8</option>
+            <option value="OChapter9.html">Chapter 9</option>
+            <option value="OChapter10.html">Chapter 10</option>
+            <option value="OChapter11.html">Chapter 11</option>
+            <option value="OChapter12.html">Chapter 12</option>
+            <option value="OChapter13.html">Chapter 13</option>
+            <option value="OChapter14.html">Chapter 14</option>
+            <option value="OChapter15.html">Chapter 15</option>
+            <option value="OChapter16.html">Chapter 16</option>
+            <option value="OChapter17.html">Chapter 17</option>
+            <option value="OChapter18.html">Chapter 18</option>
+            <option value="OChapter19.html">Chapter 19</option>
+            <option value="OChapter20.html">Chapter 20</option>
+            <option value="OChapter21.html">Chapter 21</option>
+            <!-- add more chapters here-->
+        </select>
+
+        <button onclick="goToNext()">Next ⟶</button>
+    </div>
+
+    <!-- Add text here, using <h3> -->
+
+    <div id="header">
+        <br>
+        <h1>Chapter Twenty One: Hills Are Painted</h1><br>
+
+        <br>
+        <hr><br>
+    </div>
+
+    <div id="content">
+        <!-- main content goes here -->
+    </div>
+
+
+    <script>
+        const chapters = [
+            "Obelac-Lore.html",
+            "OChapter2.html",
+            "OChapter3.html",
+            "OChapter4.html",
+            "OChapter5.html",
+            "OChapter6.html",
+            "OChapter7.html",
+            "OChapter8.html",
+            "OChapter9.html",
+            "OChapter10.html",
+            "OChapter11.html",
+            "OChapter12.html",
+            "OChapter13.html",
+            "OChapter14.html",
+            "OChapter15.html",
+            "OChapter16.html",
+            "OChapter17.html",
+            "OChapter18.html",
+            "OChapter19.html",
+            "OChapter20.html",
+            "OChapter21.html",
+        ];
+
+        function goToChapter(selectElement) {
+            const selectedValue = selectElement.value;
+
+            // Sync both dropdowns
+            document.getElementById("chapterSelectTop").value = selectedValue;
+            document.getElementById("chapterSelectBottom").value = selectedValue;
+
+            // Navigate to selected chapter
+            window.location.href = selectedValue;
+        }
+
+        function getCurrentChapterIndex() {
+            const current = window.location.pathname.split("/").pop();
+            return chapters.indexOf(current);
+        }
+
+        function goToPrevious() {
+            const index = getCurrentChapterIndex();
+            if (index > 0) {
+                window.location.href = chapters[index - 1];
+            }
+        }
+
+        function goToNext() {
+            const index = getCurrentChapterIndex();
+            if (index < chapters.length - 1) {
+                window.location.href = chapters[index + 1];
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            window.onload = function () {
+                const current = window.location.pathname.split("/").pop();
+                document.getElementById("chapterSelectTop").value = current;
+                document.getElementById("chapterSelectBottom").value = current;
+            };
+        });
+    </script>
+
+    <div id="chapter-nav">
+        <button onclick="goToPrevious()">⟵ Previous</button>
+
+        <select id="chapterSelectBottom" onchange="goToChapter(this)">
+            <option value="Obelac-Lore.html">Chapter 1</option>
+            <option value="OChapter2.html">Chapter 2</option>
+            <option value="OChapter3.html">Chapter 3</option>
+            <option value="OChapter4.html">Chapter 4</option>
+            <option value="OChapter5.html">Chapter 5</option>
+            <option value="OChapter6.html">Chapter 6</option>
+            <option value="OChapter7.html">Chapter 7</option>
+            <option value="OChapter8.html">Chapter 8</option>
+            <option value="OChapter9.html">Chapter 9</option>
+            <option value="OChapter10.html">Chapter 10</option>
+            <option value="OChapter11.html">Chapter 11</option>
+            <option value="OChapter12.html">Chapter 12</option>
+            <option value="OChapter13.html">Chapter 13</option>
+            <option value="OChapter14.html">Chapter 14</option>
+            <option value="OChapter15.html">Chapter 15</option>
+            <option value="OChapter16.html">Chapter 16</option>
+            <option value="OChapter17.html">Chapter 17</option>
+            <option value="OChapter18.html">Chapter 18</option>
+            <option value="OChapter19.html">Chapter 19</option>
+            <option value="OChapter20.html">Chapter 20</option>
+            <option value="OChapter21.html">Chapter 21</option>
+            <!-- add more chapters here-->
+        </select>
+
+        <button onclick="goToNext()">Next ⟶</button>
+    </div>
+
+    <!--
+    <div id="story-container">
+    <div id="text-output"></div>
+    <div id="cursor">|</div>
+    <button id="next-btn">Next</button>
+    </div>
+-->
+</body>
+
+</html>
