@@ -126,3 +126,11 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+#centered-red {
+  /* add in later */
+  text-align: center;
+  color: darkred;
+  font-weight: bold;
+  font-style: italic;
+}
